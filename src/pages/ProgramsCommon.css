@@ -1,0 +1,6 @@
+.programs-list { padding: 2rem 1rem; }
+.programs-list .container { max-width: 1200px; margin: 0 auto; }
+.programs-list .subtitle { color: #555; margin-bottom: 1rem; }
+.programs-list__stack { display: grid; gap: 1rem; }
+
+

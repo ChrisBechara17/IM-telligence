@@ -1,0 +1,83 @@
+import { useEffect, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import logo from '../Images/original.svg'
+import './Navbar.css'
+
+function Navbar() {
+  const [projectsOpen, setProjectsOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => { setProjectsOpen(false); setMobileOpen(false) }, [location.pathname])
+
+  return (
+    <header className="nav">
+      <div className="nav__inner">
+        <div className="nav__logo">
+          <Link to="/" className="brand">
+            <img src={logo} alt="IMTelligence Academy" />
+          </Link>
+        </div>
+        <button
+          className="nav__toggle"
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+        >
+          <span className="nav__toggle-bar" />
+          <span className="nav__toggle-bar" />
+          <span className="nav__toggle-bar" />
+        </button>
+        <nav className={`nav__links ${mobileOpen ? 'open' : ''}`}>
+          <NavLink to="/" end onClick={() => setMobileOpen(false)}>Home</NavLink>
+          <div
+            className={`nav__dropdown ${projectsOpen ? 'open' : ''}`}
+            onMouseEnter={() => setProjectsOpen(true)}
+            onMouseLeave={() => setProjectsOpen(false)}
+          >
+            <button
+              className="dropdown__trigger"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded={projectsOpen}
+              onClick={() => setProjectsOpen((v) => !v)}
+            >
+              Programs
+              <span className="caret">▾</span>
+            </button>
+            <div className="dropdown__panel" role="menu">
+              <div className="dropdown__header">Explore</div>
+              <div className="dropdown__grid">
+                <div className="dropdown__section">
+                  <div className="dropdown__title">Events</div>
+                  <Link to="/programs/workshops" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Workshops</Link>
+                  <Link to="/programs/previous-events" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Previous Events</Link>
+                </div>
+                <div className="dropdown__section">
+                  <div className="dropdown__title">Schools</div>
+                  <Link to="/programs/partner-schools" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Partner Schools</Link>
+                  <Link to="/programs/primary-school-activities" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Primary School Activities</Link>
+                  <Link to="/programs/secondary-school-activities" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Secondary School Activities</Link>
+                  
+                </div>
+                <div className="dropdown__section">
+                  <div className="dropdown__title">Curriculum</div>
+                  <Link to="/programs/stem" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>STEM</Link>
+                  <Link to="/programs/arts-design" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Arts & Design</Link>
+                  <Link to="/programs/coding-bootcamps" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Coding Bootcamps</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <NavLink to="/about" onClick={() => setMobileOpen(false)}>About Us</NavLink>
+          <NavLink to="/contact" onClick={() => setMobileOpen(false)}>Contact Us</NavLink>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+export default Navbar
+
+
