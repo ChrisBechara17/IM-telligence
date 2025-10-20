@@ -31,7 +31,7 @@ function Navbar() {
         <nav className={`nav__links ${mobileOpen ? 'open' : ''}`}>
           <NavLink to="/" end onClick={() => setMobileOpen(false)}>Home</NavLink>
           <div
-            className={`nav__dropdown ${projectsOpen ? 'open' : ''}`}
+            className={`nav__dropdown nav__dropdown--programs ${projectsOpen ? 'open' : ''}`}
             onMouseEnter={() => setProjectsOpen(true)}
             onMouseLeave={() => setProjectsOpen(false)}
           >
@@ -45,9 +45,9 @@ function Navbar() {
               Programs
               <span className="caret">▾</span>
             </button>
-            <div className="dropdown__panel" role="menu">
+            <div className="dropdown__panel dropdown__panel--programs" role="menu">
               <div className="dropdown__header">Explore</div>
-              <div className="dropdown__grid">
+              <div className="dropdown__grid dropdown__grid--programs">
                 <div className="dropdown__section">
                   <div className="dropdown__title">Events</div>
                   <Link to="/programs/workshops" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Workshops</Link>
