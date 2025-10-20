@@ -1,7 +1,7 @@
 import './PartnerSchools.css'
 import placeholderImg from '../Images/OLM.jpg'
-import placeholderImg2 from '../Images/balamand.jpg'
-import placeholderImg3 from '../Images/balamand2.jpg'
+import placeholderImg2 from '../Images/Balamand.jpg'
+import placeholderImg3 from '../Images/Balamand2.jpg'
 import placeholderImg4 from '../Images/nazareth.jpg'
 import placeholderImg5 from '../Images/stta.webp'
 
