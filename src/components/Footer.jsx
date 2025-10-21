@@ -58,7 +58,7 @@ function Footer() {
         </div>
 
         <div className="footer__col">
-          <h4 className="footer__heading"> </h4>
+          <h4 className="footer__heading"></h4>
           <ul className="footer__links">
             {programLinksB.map(link => (
               <li key={link.path}>

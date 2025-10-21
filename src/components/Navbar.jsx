@@ -6,9 +6,16 @@ import './Navbar.css'
 function Navbar() {
   const [projectsOpen, setProjectsOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 720)
   const location = useLocation()
 
   useEffect(() => { setProjectsOpen(false); setMobileOpen(false) }, [location.pathname])
+  
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 720)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <header className="nav">
@@ -32,8 +39,8 @@ function Navbar() {
           <NavLink to="/" end onClick={() => setMobileOpen(false)}>Home</NavLink>
           <div
             className={`nav__dropdown nav__dropdown--programs ${projectsOpen ? 'open' : ''}`}
-            onMouseEnter={() => setProjectsOpen(true)}
-            onMouseLeave={() => setProjectsOpen(false)}
+            onMouseEnter={!isMobile ? () => setProjectsOpen(true) : undefined}
+            onMouseLeave={!isMobile ? () => setProjectsOpen(false) : undefined}
           >
             <button
               className="dropdown__trigger"
