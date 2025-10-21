@@ -52,7 +52,7 @@
 .hero--split .hero__image img { width: 100%; height: auto; border-radius: 10px; }
 .hero__logo { height: 56px; margin-bottom: 12px; }
 .hero--split .hero__content { max-width: 600px; margin: 0; }
-.hero--split .hero__cta { justify-content: flex-start; }
+.hero--split .hero__cta { justify-content: center; }
 
 @media (max-width: 900px) { .hero--split .hero__grid { grid-template-columns: 1fr; } }
 

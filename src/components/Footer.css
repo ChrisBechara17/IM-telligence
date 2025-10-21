@@ -20,6 +20,8 @@
 .footer__about { font-size: 0.9rem; line-height: 1.6; margin-top: 10px; }
 
 .footer__heading { font-size: 1.1rem; margin: 0 0 15px; color: #fff; }
+.footer__heading:empty { display: none; }
+.footer__col:nth-child(4) .footer__links { margin-top: 45px; }
 
 .footer__links { list-style: none; padding: 0; margin: 0; }
 .footer__links li { margin-bottom: 8px; }
@@ -51,8 +53,24 @@
 @media (max-width: 900px) {
   .footer__inner { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 700px) {
-  .footer__inner { grid-template-columns: 1fr; text-align: left; }
+@media (max-width: 720px) {
+  .footer__inner { 
+    grid-template-columns: 1fr; 
+    text-align: left;
+    gap: 25px;
+  }
+  .footer__brand {
+    text-align: center;
+  }
+  .footer__col {
+    width: 100%;
+  }
+  .footer__col:nth-child(4) {
+    margin-top: -15px;
+  }
+  .footer__col:nth-child(4) .footer__links {
+    margin-top: 0;
+  }
 }
 
 
