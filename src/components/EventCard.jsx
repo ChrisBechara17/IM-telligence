@@ -7,6 +7,7 @@ function EventCard({ title, date, description, images = [] }) {
   const isDraggingRef = useRef(false)
   const lastXRef = useRef(0)
   const safeImages = images.length > 0 ? images : []
+  const safeTitle = title || 'Event'
 
   const goTo = (index) => {
     if (safeImages.length === 0) return
@@ -56,7 +57,7 @@ function EventCard({ title, date, description, images = [] }) {
             <img
               key={`${src}-${idx}`}
               src={src}
-              alt={`${title} image ${idx + 1}`}
+              alt={`${safeTitle} image ${idx + 1}`}
               className={`event-card__slide ${idx === current ? 'is-active' : ''}`}
               draggable={false}
             />
@@ -72,15 +73,14 @@ function EventCard({ title, date, description, images = [] }) {
 
       <div className="event-card__content">
         <div className="event-card__header">
-          <h3 className="event-card__title">{title}</h3>
+          {title && <h3 className="event-card__title">{title}</h3>}
           {date && <div className="event-card__date">{date}</div>}
         </div>
-        <p className="event-card__desc">{description}</p>
+        {description && <p className="event-card__desc">{description}</p>}
       </div>
     </article>
   )
 }
 
 export default EventCard
-
 

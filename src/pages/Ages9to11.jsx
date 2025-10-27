@@ -5,25 +5,19 @@ import img2 from '../Images/Logo5.png'
 
 const events = [
   {
-    title: 'Digital Art Workshop',
-    date: '10/1/2025',
-    description: 'Explore visual design basics and create digital artwork with simple tools.',
+    title: 'Junior Coders & Makers',
+    date: '4/10/2025',
+    description: 'Build games, circuits, and stories while learning core skills.',
     images: [img1, img2],
-  },
-  {
-    title: '3D Design Starter',
-    date: '11/1/2025',
-    description: 'Intro to 3D modeling and printing concepts for creative projects.',
-    images: [img2, img1],
   },
 ]
 
-function ArtsDesign() {
+function Ages9to11() {
   return (
     <main className="page programs-list">
       <div className="container">
-        <h1>Arts & Design</h1>
-        <p className="subtitle">Creativity meets technology</p>
+        <h1>Ages 9 to 11</h1>
+        <p className="subtitle">Deeper skills with fun challenges</p>
         <div className="programs-list__stack">
           {events.map((e) => (
             <EventCard key={e.title} {...e} />
@@ -34,6 +28,5 @@ function ArtsDesign() {
   )
 }
 
-export default ArtsDesign
-
+export default Ages9to11
 

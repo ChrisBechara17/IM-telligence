@@ -8,27 +8,27 @@ import placeholderImg5 from '../Images/stta.webp'
 
 const schools = [
   {
-    name: 'Al Kalima School-St-Anthony',
+    name: 'Al Kalima School-St-Anthony - Zgharta',
     description: 'A valued partner in our STEM and robotics initiatives.',
     image: placeholderImg,
   },
   {
-    name: 'Balamand French',
+    name: 'College Dotre Dame du Balamand',
     description: 'Supporting innovation through French curriculum partnerships.',
     image: placeholderImg2,
   },
   {
-    name: 'Balamand English',
+    name: 'Lady of Balamand High School',
     description: 'Empowering students with hands-on tech and coding education.',
     image: placeholderImg3,
   },
   {
-    name: 'Nazareth',
+    name: 'Ecole Des Religieuses De Nazareth - Zgharta',
     description: 'Collaborating to bring robotics and coding to the classroom.',
     image: placeholderImg4,
   },
   {
-    name: 'Ecole des Saint therese Aminoun',
+    name: 'College des Saint therese - Aminoun',
     description: 'Partnering to inspire creativity and problem-solving skills.',
     image: placeholderImg5,
   },

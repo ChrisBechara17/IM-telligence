@@ -17,9 +17,10 @@ function Footer() {
     { label: 'Partner Schools', path: '/programs/partner-schools' },
     { label: 'Primary School Activities', path: '/programs/primary-school-activities' },
     { label: 'Secondary School Activities', path: '/programs/secondary-school-activities' },
-    { label: 'STEM', path: '/programs/stem' },
-    { label: 'Arts & Design', path: '/programs/arts-design' },
-    { label: 'Coding Bootcamps', path: '/programs/coding-bootcamps' }
+    { label: 'Ages 4 to 5', path: '/programs/academy/ages-4-5' },
+    { label: 'Ages 6 to 8', path: '/programs/academy/ages-6-8' },
+    { label: 'Ages 9 to 11', path: '/programs/academy/ages-9-11' },
+    { label: 'Ages 12 to 15', path: '/programs/academy/ages-12-15' }
   ]
   const mid = Math.ceil(programLinks.length / 2)
   const programLinksA = programLinks.slice(0, mid)
@@ -86,5 +87,4 @@ function Footer() {
 }
 
 export default Footer
-
 

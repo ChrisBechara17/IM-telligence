@@ -13,9 +13,10 @@ import Workshops from './pages/Workshops.jsx'
 import PreviousEvents from './pages/PreviousEvents.jsx'
 import PrimarySchoolActivities from './pages/PrimarySchoolActivities.jsx'
 import SecondarySchoolActivities from './pages/SecondarySchoolActivities.jsx'
-import STEM from './pages/STEM.jsx'
-import ArtsDesign from './pages/ArtsDesign.jsx'
-import CodingBootcamps from './pages/CodingBootcamps.jsx'
+import Ages4to5 from './pages/Ages4to5.jsx'
+import Ages6to8 from './pages/Ages6to8.jsx'
+import Ages9to11 from './pages/Ages9to11.jsx'
+import Ages12to15 from './pages/Ages12to15.jsx'
 
 function ScrollToTop() {
   const location = useLocation()
@@ -43,9 +44,10 @@ function App() {
           <Route path="/programs/previous-events" element={<PreviousEvents />} />
           <Route path="/programs/primary-school-activities" element={<PrimarySchoolActivities />} />
           <Route path="/programs/secondary-school-activities" element={<SecondarySchoolActivities />} />
-          <Route path="/programs/stem" element={<STEM />} />
-          <Route path="/programs/arts-design" element={<ArtsDesign />} />
-          <Route path="/programs/coding-bootcamps" element={<CodingBootcamps />} />
+          <Route path="/programs/academy/ages-4-5" element={<Ages4to5 />} />
+          <Route path="/programs/academy/ages-6-8" element={<Ages6to8 />} />
+          <Route path="/programs/academy/ages-9-11" element={<Ages9to11 />} />
+          <Route path="/programs/academy/ages-12-15" element={<Ages12to15 />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

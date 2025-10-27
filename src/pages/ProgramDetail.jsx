@@ -7,9 +7,10 @@ const SLUG_TO_TITLE = {
   'primary-school-activities': 'Primary School Activities',
   'secondary-school-activities': 'Secondary School Activities',
   'partner-schools': 'Partner Schools',
-  'stem': 'STEM',
-  'arts-design': 'Arts & Design',
-  'coding-bootcamps': 'Coding Bootcamps',
+  'academy/ages-4-5': 'Ages 4 to 5',
+  'academy/ages-6-8': 'Ages 6 to 8',
+  'academy/ages-9-11': 'Ages 9 to 11',
+  'academy/ages-12-15': 'Ages 12 to 15',
 }
 
 function normalizeSlug(raw) {

@@ -68,10 +68,11 @@ function Navbar() {
                   
                 </div>
                 <div className="dropdown__section">
-                  <div className="dropdown__title">Curriculum</div>
-                  <Link to="/programs/stem" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>STEM</Link>
-                  <Link to="/programs/arts-design" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Arts & Design</Link>
-                  <Link to="/programs/coding-bootcamps" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Coding Bootcamps</Link>
+                  <div className="dropdown__title">Academy</div>
+                  <Link to="/programs/academy/ages-4-5" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Ages 4 to 5</Link>
+                  <Link to="/programs/academy/ages-6-8" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Ages 6 to 8</Link>
+                  <Link to="/programs/academy/ages-9-11" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Ages 9 to 11</Link>
+                  <Link to="/programs/academy/ages-12-15" role="menuitem" onClick={() => { setProjectsOpen(false); setMobileOpen(false) }}>Ages 12 to 15</Link>
                 </div>
               </div>
             </div>
@@ -86,5 +87,4 @@ function Navbar() {
 }
 
 export default Navbar
-
 

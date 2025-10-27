@@ -10,8 +10,8 @@ function Hero({ imageSrc }) {
           {imageSrc ? <img src={imageSrc} alt="Hero" /> : <div className="placeholder" />}
         </div>
         <div className="hero__content">
-          <p className="headline">Headline Placeholder</p>
-          <p className="sub">Short intro placeholder describing the academy and community.</p>
+          <p className="headline">Inspire Young Minds With Technology</p>
+          <p className="sub">Hands‑on coding, robotics, and design for ages 4–15. We turn curiosity into real skills through workshops, school programs, and clubs.</p>
           <div className="hero__cta">
             <Link to="/contact" className="btn btn--primary">Join Now</Link>
           </div>
