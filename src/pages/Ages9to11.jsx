@@ -1,14 +1,16 @@
 import './ProgramsCommon.css'
 import EventCard from '../components/EventCard.jsx'
-import img1 from '../Images/Logo4.png'
-import img2 from '../Images/Logo5.png'
+import e1 from '../Images/9-11/1.png'
+import e2 from '../Images/9-11/2.png'
+import e3 from '../Images/9-11/3.png'
+import e4 from '../Images/9-11/4.png'
 
 const events = [
   {
-    title: 'Junior Coders & Makers',
-    date: '4/10/2025',
-    description: 'Build games, circuits, and stories while learning core skills.',
-    images: [img1, img2],
+    title: 'EV3 Robotics Explorers',
+    description:
+      'Students built and programmed LEGO MINDSTORMS EV3 robots, learning to use sensors and motors to solve challenges while strengthening logic, teamwork, and engineering thinking.',
+    images: [e1, e2, e3, e4],
   },
 ]
 
@@ -19,8 +21,8 @@ function Ages9to11() {
         <h1>Ages 9 to 11</h1>
         <p className="subtitle">Deeper skills with fun challenges</p>
         <div className="programs-list__stack">
-          {events.map((e) => (
-            <EventCard key={e.title} {...e} />
+          {events.map((e, idx) => (
+            <EventCard key={e.title || `event-${idx}`} {...e} />
           ))}
         </div>
       </div>
@@ -29,4 +31,3 @@ function Ages9to11() {
 }
 
 export default Ages9to11
-

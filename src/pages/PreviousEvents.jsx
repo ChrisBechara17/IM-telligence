@@ -29,6 +29,9 @@ const events = [
       images: [ev1_1, ev1_2, ev1_3, ev1_4],
   },
   {
+      title:'Robotics Display with AZM School and Universirty',
+      date: '5/9/2024',
+      description:'A collaborative event with AZM School and University, where our team presented various robotics projects and demonstrated how the robots function. Students explored the technology behind each system, gaining hands-on insight into programming, sensors, and real-world applications of robotics.',
       images: [ev2_1, ev2_2, ev2_3, ev2_4],
   },
   
