@@ -13,7 +13,7 @@ function Contact() {
           {/* Email */}
           <li>
             <a
-              href="mailto:hello@imtelligence.org"
+              href="mailto:imtelligenceacademy@gmail.com"
               className="contact-card"
             >
               <div className="contact-card__row">
@@ -25,7 +25,7 @@ function Contact() {
                 </span>
                 <div className="min-w-0">
                   <p className="contact-card__title">Email</p>
-                  <p className="contact-card__text">hello@imtelligence.org</p>
+                  <p className="contact-card__text">imtelligenceacademy@gmail.com</p>
                 </div>
               </div>
             </a>
@@ -56,23 +56,23 @@ function Contact() {
             </a>
           </li>
 
-          {/* LinkedIn */}
+          {/* Facebook */}
           <li>
             <a
-              href="https://www.linkedin.com/company/imtelligence"
+              href="https://www.facebook.com/"
               target="_blank"
               rel="noreferrer noopener"
               className="contact-card"
             >
               <div className="contact-card__row">
                 <span className="contact-card__icon">
-                  {/* LinkedIn icon */}
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M6.5 9.5v8M6.5 6.5v.01M10.5 17.5v-5.5a2.5 2.5 0 0 1 5 0v5.5M10.5 14h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  {/* Facebook icon */}
+                  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+                    <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06C2 17.08 5.66 21.21 10.44 22v-7.02H7.9v-2.92h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.86h2.74l-.44 2.92h-2.3V22C18.34 21.21 22 17.08 22 12.06z" />
                   </svg>
                 </span>
                 <div className="min-w-0">
-                  <p className="contact-card__title">LinkedIn</p>
+                  <p className="contact-card__title">Facebook</p>
                   <p className="contact-card__text">IMTelligence Academy</p>
                 </div>
               </div>
@@ -92,4 +92,3 @@ function Contact() {
 }
 
 export default Contact
-
