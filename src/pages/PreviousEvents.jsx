@@ -9,6 +9,10 @@ import ev2_1 from '../Images/Event 2/1.jpg'
 import ev2_2 from '../Images/Event 2/2.jpg'
 import ev2_3 from '../Images/Event 2/3.jpg'
 import ev2_4 from '../Images/Event 2/4.jpg'
+import ev1_1 from '../Images/Event 1/1.png'
+import ev1_2 from '../Images/Event 1/2.jpg'
+import ev1_3 from '../Images/Event 1/3.jpg'
+import ev1_4 from '../Images/Event 1/4.png'
 
 
 const events = [
@@ -20,6 +24,9 @@ const events = [
   },
   {
       images: [ev2_1, ev2_2, ev2_3, ev2_4],
+  },
+  {
+      images: [ev1_1, ev1_2, ev1_3, ev1_4],
   },
 
 ]
