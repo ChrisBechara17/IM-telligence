@@ -8,8 +8,8 @@ import u4 from '../Images/U6/4.png'
 
 const events = [
   {
-    title:'Early Robotics Learning with Ziggy',
-    description:'A hands-on workshop introducing 4–5-year-old children to the basics of robotics and coding using the Ziggy robot. Through interactive play, students learned logical thinking, sequencing, and problem-solving while developing curiosity and confidence in technology from an early age.',
+    title:'Early Robotics Learning with MTiny',
+    description:'A hands-on workshop introducing 4–5-year-old children to the basics of robotics and coding using the MTiny robot. Through interactive play, students learned logical thinking, sequencing, and problem-solving while developing curiosity and confidence in technology from an early age.',
     images: [u1, u2, u3, u4],
   },
  

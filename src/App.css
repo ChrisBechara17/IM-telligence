@@ -14,7 +14,9 @@ main {
 
 .btn { display: inline-block; padding: 0.75rem 1.1rem; border-radius: var(--radius-lg); border: 1px solid rgba(78,161,226,0.35); text-decoration: none; }
 .btn--primary { background: var(--primary); color: var(--secondary); border-color: var(--primary-700); }
-.btn--primary:hover { background: var(--primary-700); }
+/* Keep text visible on hover even though links have global hover styles */
+.btn:hover { color: inherit; opacity: 1; text-decoration: none; }
+.btn--primary:hover, .btn--primary:focus { background: var(--primary-700); color: var(--secondary); }
 .btn--secondary { background: var(--secondary); color: var(--primary-700); border-color: rgba(78,161,226,0.5); }
 
 .values { padding: 3rem 1rem; }
@@ -67,6 +69,12 @@ main {
 }
 .featured__cta { margin-top: 1rem; text-align: center; }
 
+/* Home events section */
+.home-events { padding: 2rem 1rem; }
+.home-events .container { max-width: 1200px; margin: 0 auto; }
+.home-events__title { text-align: center; margin: 0 0 0.75rem; }
+.home-events__cta { margin-top: 0.75rem; text-align: center; }
+
 .testimonials { padding: 3rem 1rem; background: linear-gradient(180deg, var(--secondary), rgba(78,161,226,0.08)); }
 .testimonials h2 { text-align: center; }
 .testimonials__grid {
@@ -90,5 +98,4 @@ main {
 .about-teaser__cta { margin-top: 0.75rem; }
 
 .cta-band { margin: 2rem 0 3rem; display: grid; gap: 0.75rem; place-items: center; padding: 1rem; border-radius: var(--radius-md); border: 1px dashed rgba(78,161,226,0.35); }
-
 

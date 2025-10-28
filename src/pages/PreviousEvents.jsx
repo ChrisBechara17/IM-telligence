@@ -17,17 +17,21 @@ import ev1_4 from '../Images/Event 1/4.png'
 
 const events = [
   {
-    title: 'Education for Innovation: Humanizing Artificial Intelligence and Robotics',
-    date: '9/12/2025',
-    description: `In collaboration with IM-Telligence Academy, and with the participation of MP Tony Sleiman Frangieh, Head of the Parliamentary Committee for Information Technology; the General Directorate of Lebanese Maronite Order Schools; Holy Spirit University of Kaslik (USEK); the Lebanese Educational Technology Syndicate; Beirut Arab University; and the Order of Engineers in Tripoli and North Lebanon, a conference on Artificial Intelligence was held. This event comes as a continuation of the project launched between Al-Kalima School and MP Frangieh, aiming to support students’ abilities and empower them to become future leaders by enhancing their digital skills, especially in light of the rapid technological development shaping our world today.`,
+    title: 'Humanizing Artificial Intelligence and Robotics',
+    date: '9/11/2025',
+    description: `In collaboration with IM-Telligence Academy and several key partners — including MP Tony Sleiman Frangieh, USEK, Beirut Arab University, and the Order of Engineers in North Lebanon — a conference on Artificial Intelligence was held. The event continued the project between Al-Kalima School and MP Frangieh, supporting students’ digital skills and preparing them to lead in an increasingly tech-driven world.`,
     images: [main1, main2, main3, main4, main5],
+  },
+  {
+      title:'Robotics Event with Safadi Foundation',
+      date: '8/22/2025',
+      description:'In collaboration with the Safadi Foundation and Mrs. Violette Safadi, our team guided students in exploring robotics and programming through interactive activities. The event highlighted our educational initiatives and showcased the innovative projects developed by our students using smart robots.',
+      images: [ev1_1, ev1_2, ev1_3, ev1_4],
   },
   {
       images: [ev2_1, ev2_2, ev2_3, ev2_4],
   },
-  {
-      images: [ev1_1, ev1_2, ev1_3, ev1_4],
-  },
+  
 
 ]
 
