@@ -59,7 +59,7 @@ function Contact() {
           {/* Facebook */}
           <li>
             <a
-              href="https://www.facebook.com/"
+              href="http://facebook.com/profile.php?id=100091292630529"
               target="_blank"
               rel="noreferrer noopener"
               className="contact-card"
