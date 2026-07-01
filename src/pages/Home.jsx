@@ -1,50 +1,47 @@
 import { Link } from 'react-router-dom'
+import { School, Baby, Bot, Trophy } from 'lucide-react'
 import Hero from '../components/Hero.jsx'
 import EventCard from '../components/EventCard.jsx'
-import logoLarge from '../Images/Logo2.svg'
-import hero1 from '../Images/hero2.jpg'
-import main1 from '../Images/Main/1.jpg'
-import main2 from '../Images/Main/2.jpg'
-import main3 from '../Images/Main/3.jpg'
-import main4 from '../Images/Main/4.jpg'
-import main5 from '../Images/Main/5.jpg'
+import { useEvents, useTestimonials } from '../lib/useApi.js'
+
+const VALUES = [
+  { icon: School, title: 'In-School Programs', text: 'We partner with schools to run structured coding and robotics classes throughout the year, adapting to each timetable and curriculum.' },
+  { icon: Baby, title: 'Age-Appropriate (4–15)', text: 'From visual programming for younger learners to text-based coding and electronics for older students, our pathways meet every learner.' },
+  { icon: Bot, title: 'Project-Based Robotics', text: 'Students design, build, and program robots to solve real-world challenges while learning teamwork and engineering thinking.' },
+  { icon: Trophy, title: 'Competition Readiness', text: 'We mentor school teams for national robotics competitions — strategy, documentation, and presentation skills.' },
+]
 
 function Home() {
+  const { data: featured } = useEvents({ featured: 1 })
+  const { data: testimonials } = useTestimonials()
+
   return (
     <main>
-      <Hero imageSrc={hero1} logoSrc={logoLarge} />
+      <Hero />
 
       <section className="values">
-        <h2>Why Choose Us</h2>
+        <span className="section-eyebrow" style={{ display: 'block', textAlign: 'center' }}>Why Choose Us</span>
+        <h2>Learning that actually sticks</h2>
+        <p className="values__lead">Real hardware, real code, and mentors who make technology click for every age group.</p>
         <div className="values__grid">
-          <article className="card">
-            <h3>In-School Programs</h3>
-            <p>We partner with schools to run structured coding and robotics classes throughout the academic year, adapting to each school timetable and curriculum.</p>
-          </article>
-          <article className="card">
-            <h3>Age-Appropriate Learning (4–15)</h3>
-            <p>From visual programming for younger learners to text-based coding and electronics for older students, our pathways meet every learner where they are.</p>
-          </article>
-          <article className="card">
-            <h3>Project-Based Robotics</h3>
-            <p>Students design, build, and program robots to solve real-world challenges while learning teamwork, problem-solving, and engineering thinking.</p>
-          </article>
-          <article className="card">
-            <h3>Competition Readiness</h3>
-            <p>We mentor school teams to prepare for national robotics competitions, guiding them through strategy, documentation, and presentation skills.</p>
-          </article>
+          {VALUES.map(({ icon: Icon, title, text }) => (
+            <article className="card" key={title}>
+              <div className="card__icon"><Icon size={22} /></div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="home-events">
         <div className="container">
+          <span className="section-eyebrow" style={{ display: 'block', textAlign: 'center' }}>Featured</span>
           <h2 className="home-events__title">Featured Events</h2>
-          <EventCard
-            title="Humanizing Artificial Intelligence and Robotics"
-            date="9/11/2025"
-            description={`In collaboration with IM-Telligence Academy and several key partners — including MP Tony Sleiman Frangieh, USEK, Beirut Arab University, and the Order of Engineers in North Lebanon — a conference on Artificial Intelligence was held. The event continued the project between Al-Kalima School and MP Frangieh, supporting students’ digital skills and preparing them to lead in an increasingly tech-driven world.`}
-            images={[main1, main2, main3, main4, main5]}
-          />
+          <p className="home-events__lead">A look at what our students and partners have been building.</p>
+          {featured?.map((e) => (
+            <EventCard key={e.id} title={e.title} date={e.date} description={e.description} images={e.images} />
+          ))}
           <div className="home-events__cta">
             <Link to="/programs/previous-events" className="btn btn--primary">View Previous Events</Link>
           </div>
@@ -52,23 +49,27 @@ function Home() {
       </section>
 
       <section className="testimonials">
+        <span className="section-eyebrow" style={{ display: 'block', textAlign: 'center' }}>Testimonials</span>
         <h2>What People Say</h2>
+        <p className="testimonials__lead">Voices from parents, students, and school partners.</p>
         <div className="testimonials__grid">
-          <blockquote>
-            <p>“Amazing experience! Placeholder text for testimonial.”</p>
-            <footer>— Author Name, Role</footer>
-          </blockquote>
-          <blockquote>
-            <p>“Highly recommend. Placeholder text for testimonial.”</p>
-            <footer>— Author Name, Role</footer>
-          </blockquote>
-          <blockquote>
-            <p>“Great value. Placeholder text for testimonial.”</p>
-            <footer>— Author Name, Role</footer>
-          </blockquote>
+          {testimonials?.map((t) => (
+            <blockquote key={t.id}>
+              <p>{t.quote}</p>
+              <footer>— {t.author}{t.role ? `, ${t.role}` : ''}</footer>
+            </blockquote>
+          ))}
         </div>
       </section>
 
+      <section className="cta-band-wrap" style={{ padding: '0 1rem' }}>
+        <div className="cta-band">
+          <span className="section-eyebrow">Ready to start?</span>
+          <h2>Bring robotics to your classroom or child</h2>
+          <p>Join a program, book a workshop, or partner your school with IM-Telligence Academy.</p>
+          <Link to="/contact" className="btn btn--primary">Get in Touch</Link>
+        </div>
+      </section>
     </main>
   )
 }

@@ -1,71 +1,48 @@
-.partner-schools { padding: 2rem 1rem; }
+.partner-schools { padding: clamp(2.5rem, 5vw, 4rem) 1rem; }
 .partner-schools .container { max-width: 1200px; margin: 0 auto; }
-
-.partner-schools h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.partner-schools .subtitle {
-  color: #555;
-  margin-bottom: 1.5rem;
-}
+.partner-schools h1 { margin-bottom: 0.5rem; }
+.partner-schools .subtitle { color: var(--muted); margin-bottom: 2rem; font-size: 1.05rem; }
 
 .schools-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
-
-@media (min-width: 640px) {
-  .schools-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .schools-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
+@media (min-width: 640px) { .schools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .schools-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .school-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   padding: 1rem;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+.school-card:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: var(--shadow-card); }
 
 .school-card__image {
   width: 100%;
-  height: 160px;
+  height: 170px;
   object-fit: contain;
-  border-radius: 0.5rem;
-  margin-bottom: 0.75rem;
-  background: #f9fafb;
+  border-radius: 12px;
+  margin-bottom: 0.85rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
 }
 
 .school-card__badge {
   display: inline-block;
-  font-size: 0.75rem;
-  background: #f3f4f6;
-  color: #374151;
-  padding: 0.25rem 0.5rem;
+  font-size: 0.72rem;
+  background: rgba(34, 211, 238, 0.14);
+  color: var(--accent);
+  border: 1px solid var(--border-strong);
+  padding: 0.2rem 0.6rem;
   border-radius: 9999px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.04em;
 }
 
-.school-card__name {
-  margin: 0;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-}
-
-.school-card__desc {
-  margin-top: 0.5rem;
-  color: #4b5563;
-  line-height: 1.5;
-}
-
-
+.school-card__name { margin: 0; font-size: 1.1rem; line-height: 1.4; color: var(--white); }
+.school-card__desc { margin-top: 0.5rem; color: var(--muted); line-height: 1.6; }

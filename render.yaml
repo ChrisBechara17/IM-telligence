@@ -1,0 +1,32 @@
+# Render blueprint for the IM-Telligence backend (Express API).
+# The frontend is deployed separately on Vercel; the database is Vercel Postgres (Neon).
+services:
+  - type: web
+    name: imt-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Set these in the Render dashboard (Environment tab):
+      - key: DATABASE_URL      # Neon / Vercel Postgres connection string
+        sync: false
+      - key: ADMIN_PASSWORD    # password for /admin
+        sync: false
+      - key: PUBLIC_URL        # this service's own URL, e.g. https://imt-api.onrender.com
+        sync: false
+      - key: CORS_ORIGIN       # your Vercel site, e.g. https://your-site.vercel.app
+        sync: false
+
+    # NOTE: uploaded images are written to the local filesystem, which is ephemeral
+    # on Render's free plan (wiped on each deploy). Database content lives in Neon and
+    # always persists. For persistent uploads, upgrade to a paid instance and add a disk:
+    #
+    # disk:
+    #   name: uploads
+    #   mountPath: /var/data
+    #   sizeGB: 1
+    # then also set env UPLOADS_DIR=/var/data/uploads

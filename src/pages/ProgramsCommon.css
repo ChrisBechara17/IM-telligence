@@ -1,6 +1,21 @@
-.programs-list { padding: 2rem 1rem; }
+.programs-list { padding: clamp(2.5rem, 5vw, 4rem) 1rem; }
 .programs-list .container { max-width: 1200px; margin: 0 auto; }
-.programs-list .subtitle { color: #555; margin-bottom: 1rem; }
-.programs-list__stack { display: grid; gap: 1rem; }
+.programs-list h1 { margin: 0 0 0.4rem; }
+.programs-list .subtitle { color: var(--muted); margin-bottom: 2rem; font-size: 1.05rem; }
+.programs-list__stack { display: grid; gap: 1.25rem; }
 
+.page { padding: clamp(2.5rem, 5vw, 4rem) 1rem; max-width: 1200px; margin: 0 auto; }
 
+/* Shared page header band */
+.page-head { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }
+.page-head h1 { margin: 0 0 0.5rem; }
+.page-head p { color: var(--muted); font-size: 1.05rem; }
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 1rem;
+  background: var(--surface);
+}

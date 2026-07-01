@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, Suspense, lazy } from 'react'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
@@ -9,50 +9,52 @@ import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import ProgramDetail from './pages/ProgramDetail.jsx'
 import PartnerSchools from './pages/PartnerSchools.jsx'
-import Workshops from './pages/Workshops.jsx'
-import PreviousEvents from './pages/PreviousEvents.jsx'
-import PrimarySchoolActivities from './pages/PrimarySchoolActivities.jsx'
-import SecondarySchoolActivities from './pages/SecondarySchoolActivities.jsx'
-import Ages4to5 from './pages/Ages4to5.jsx'
-import Ages6to8 from './pages/Ages6to8.jsx'
-import Ages9to11 from './pages/Ages9to11.jsx'
-import Ages12to15 from './pages/Ages12to15.jsx'
+import CategoryPage from './pages/CategoryPage.jsx'
+
+const Admin = lazy(() => import('./admin/Admin.jsx'))
 
 function ScrollToTop() {
   const location = useLocation()
-  
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location.pathname])
-  
+  useEffect(() => { window.scrollTo(0, 0) }, [location.pathname])
   return null
+}
+
+function PublicLayout() {
+  return (
+    <div className="app">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Programs" element={<Programs />} />
+        <Route path="/Programs/:slug" element={<ProgramDetail />} />
+        <Route path="/programs/:slug" element={<ProgramDetail />} />
+        <Route path="/programs/partner-schools" element={<PartnerSchools />} />
+        <Route path="/programs/workshops" element={<CategoryPage category="workshops" title="Workshops" subtitle="Hands-on sessions for schools and communities" />} />
+        <Route path="/programs/previous-events" element={<CategoryPage category="previous" title="Previous Events" subtitle="Highlights from our recent activities" />} />
+        <Route path="/programs/primary-school-activities" element={<CategoryPage category="primary" title="Primary School Activities" subtitle="Engaging activities tailored for younger students" />} />
+        <Route path="/programs/secondary-school-activities" element={<CategoryPage category="secondary" title="Secondary School Activities" subtitle="Challenging tracks for older students" />} />
+        <Route path="/programs/academy/ages-4-5" element={<CategoryPage category="age-4-5" title="Ages 4 to 5" subtitle="Early exploration through play and making" />} />
+        <Route path="/programs/academy/ages-6-8" element={<CategoryPage category="age-6-8" title="Ages 6 to 8" subtitle="Creative projects that build foundations" />} />
+        <Route path="/programs/academy/ages-9-11" element={<CategoryPage category="age-9-11" title="Ages 9 to 11" subtitle="Deeper skills with fun challenges" />} />
+        <Route path="/programs/academy/ages-12-15" element={<CategoryPage category="age-12-15" title="Ages 12 to 15" subtitle="Advanced tracks to grow mastery" />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </div>
+  )
 }
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="app">
-        <Navbar />
+      <Suspense fallback={null}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Programs" element={<Programs />} />
-          <Route path="/Programs/:slug" element={<ProgramDetail />} />
-          <Route path="/programs/:slug" element={<ProgramDetail />} />
-          <Route path="/programs/partner-schools" element={<PartnerSchools />} />
-          <Route path="/programs/workshops" element={<Workshops />} />
-          <Route path="/programs/previous-events" element={<PreviousEvents />} />
-          <Route path="/programs/primary-school-activities" element={<PrimarySchoolActivities />} />
-          <Route path="/programs/secondary-school-activities" element={<SecondarySchoolActivities />} />
-          <Route path="/programs/academy/ages-4-5" element={<Ages4to5 />} />
-          <Route path="/programs/academy/ages-6-8" element={<Ages6to8 />} />
-          <Route path="/programs/academy/ages-9-11" element={<Ages9to11 />} />
-          <Route path="/programs/academy/ages-12-15" element={<Ages12to15 />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/admin/*" element={<Admin />} />
+          <Route path="/*" element={<PublicLayout />} />
         </Routes>
-        <Footer />
-      </div>
+      </Suspense>
     </BrowserRouter>
   )
 }

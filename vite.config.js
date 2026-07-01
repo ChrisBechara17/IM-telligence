@@ -10,4 +10,11 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    proxy: {
+      // Forward API + uploaded images to the Express backend during local dev.
+      '/api': 'http://localhost:4000',
+      '/uploads': 'http://localhost:4000',
+    },
+  },
 })
